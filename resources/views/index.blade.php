@@ -11,29 +11,16 @@
                     <i class="bi bi-exclamation-circle"></i>
                 </div>
 
-                <h1 class="error-code mb-4" data-aos="fade-up" data-aos-delay="300">404</h1>
+                <h1 class="error-code mb-4" data-aos="fade-up" data-aos-delay="300">500</h1>
 
-                <h2 class="error-title mb-3" data-aos="fade-up" data-aos-delay="400">Oops! Page Not Found</h2>
+                <h2 class="error-title mb-3" data-aos="fade-up" data-aos-delay="400">Oops! em manutenção</h2>
 
                 <p class="error-text mb-4" data-aos="fade-up" data-aos-delay="500">
-                    The page you are looking for might have been removed, had its name changed, or is temporarily
-                    unavailable.
+                    Se apareceu essa tela estamos enfrentando um pequeno problema ou estamos em manutenção para melhor atende-los.
                 </p>
 
-                <div class="search-box mb-4" data-aos="fade-up" data-aos-delay="600">
-                    <form action="#" class="search-form">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search for pages..."
-                                aria-label="Search">
-                            <button class="btn search-btn" type="submit">
-                                <i class="bi bi-search"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-
                 <div class="error-action" data-aos="fade-up" data-aos-delay="700">
-                    <a href="/" class="btn btn-primary">Back to Home</a>
+                    <a href="javascript:" class="btn btn-primary">Volta mais tarde!</a>
                 </div>
             </div>
 
