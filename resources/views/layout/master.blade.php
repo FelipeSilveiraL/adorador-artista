@@ -153,6 +153,7 @@
 
     <!-- Main JS File -->
     <script src="{{ asset('resources/js/main.js') }}"></script>
+    <script src="{{ asset('resources/js/seg.js') }}"></script>
 
 </body>
 
