@@ -723,7 +723,7 @@ h6 {
   right: 15px;
   bottom: -15px;
   z-index: 99999;
-  background-color: var(--accent-color);
+  background-color: #25d366;
   width: 44px;
   height: 44px;
   border-radius: 50px;
@@ -737,7 +737,7 @@ h6 {
 }
 
 .scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background-color: color-mix(in srgb, #25d366), transparent 20%);
   color: var(--contrast-color);
 }
 
@@ -808,7 +808,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 60px 0;
+  padding: 25px 0;
   scroll-margin-top: 90px;
   overflow: clip;
 }
@@ -1030,7 +1030,6 @@ section,
 # Featured Posts Section
 --------------------------------------------------------------*/
 .featured-posts {
-  padding: 80px 0;
   background: linear-gradient(135deg, var(--surface-color) 0%, color-mix(in srgb, var(--accent-color), transparent 95%) 100%);
 }
 

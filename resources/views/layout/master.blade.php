@@ -35,7 +35,7 @@
     <header id="header" class="header d-flex align-items-center position-relative">
         <div class="container position-relative d-flex align-items-center justify-content-between">
 
-            <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+            <a href="{{ url('/') }}" class="logo d-flex align-items-center me-auto me-xl-0">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
                 <img src="{{ asset('resources/img/logo.png') }}" alt="">
                 {{-- <h1 class="sitename">Adorador Artista</h1> --}}
@@ -43,8 +43,8 @@
 
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="index.html" class="active">Sobre</a></li>
-                    <li><a href="blog-details.html">Blog</a></li>
+                    <li><a href="{{ url('/') }}" class="{{ $paginaAtual == 'index' ? 'active' : '' }}">Sobre </a> </li>
+                    <li><a href="{{ url('blog') }}" class="{{ $paginaAtual == 'blog' || $paginaAtual == 'blog-details' ? 'active' : '' }}">Blog</a> </li>
                     <li><a href="author-profile.html">Loja</a></li>
                     <li><a href="#footer">Contato</a></li>
                 </ul>
@@ -52,8 +52,8 @@
             </nav>
 
             <div class="header-social-links">
-                <a href="https://linktr.ee/adoradorartista?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnpajGS3keW-3p11cLDY383tWgN0JfadXnt2W3K7fCvwaYjy08PY9HQxi7NVs_aem_8TyEb-QuUGDC77bBWMrR2Q"
-                    class="facebook" target="_blank"><i class="bi bi-tree"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61577621965663" class="facebook"><i
+                        class="bi bi-facebook"></i></a>
                 <a href="https://www.instagram.com/adoradoraartista/#" class="instagram" target="_blank"><i
                         class="bi bi-instagram"></i></a>
 
@@ -71,6 +71,7 @@
     </main>
 
     <footer id="footer" class="footer light-background">
+
         <div class="footer-main">
             <div class="container">
                 <div class="row gy-4">
@@ -90,8 +91,8 @@
                         <div class="footer-widget">
                             <h5>Conecte conosco</h5>
                             <div class="social-icons">
-                                <a href="https://linktr.ee/adoradorartista?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnpajGS3keW-3p11cLDY383tWgN0JfadXnt2W3K7fCvwaYjy08PY9HQxi7NVs_aem_8TyEb-QuUGDC77bBWMrR2Q"
-                                    aria-label="Facebook"><i class="bi bi-tree"></i></a>
+                                <a href="https://www.facebook.com/profile.php?id=61577621965663" class="facebook"><i
+                                        class="bi bi-facebook"></i></a>
                                 <a href="https://www.instagram.com/adoradoraartista/#" aria-label="Instagram"><i
                                         class="bi bi-instagram"></i></a>
                                 <a href="https://www.youtube.com/watch?v=XPe3cVBGDnk" aria-label="YouTube"><i
@@ -122,13 +123,13 @@
                 </div>
             </div>
         </div>
-
         <div class="footer-bottom">
             <div class="container">
                 <div class="row gy-3 align-items-center">
                     <div class="col-lg-6 col-md-12">
                         <div class="credits mt-1">
-                            Desenvolvido por <a href="https://cloudsolutionsltda.com/" target="_blank">Cloud Solutions LTDA</a>
+                            Desenvolvido por <a href="https://cloudsolutionsltda.com/" target="_blank">Cloud Solutions
+                                LTDA</a>
                         </div>
                     </div>
                 </div>
@@ -138,8 +139,15 @@
     </footer>
 
     <!-- Scroll Top -->
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
+    {{-- <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a> --}}
+
+    <div class="container">
+        <a href="https://chat.whatsapp.com/FWyeZnJv5LD3FpMWqJwIoW" target="_blank"
+            class="scroll-top d-flex align-items-center justify-content-center active"><i
+                class="bi bi-whatsapp"></i></a>
+    </div>
+
 
     <!-- Preloader -->
     <div id="preloader"></div>
@@ -153,7 +161,7 @@
 
     <!-- Main JS File -->
     <script src="{{ asset('resources/js/main.js') }}"></script>
-    <script src="{{ asset('resources/js/seg.js') }}"></script>
+    {{-- <script src="{{ asset('resources/js/seg.js') }}"></script> --}}
 
 </body>
 
