@@ -88,6 +88,13 @@ h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
 }
+.dourado{
+    color: #f1c40f;
+}
+
+.destaque-texto{
+    font-weight: bold
+}
 
 /* PHP Email Form Messages
 ------------------------------*/
