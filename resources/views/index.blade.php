@@ -305,7 +305,7 @@
                         </p>
                         <p>
                             Ao longo dessa caminhada, por meio das redes sociais e dos conteúdos publicados — incluindo
-                            artigos do antigo blog Meu Devocional com Cristo — este ministério tem alcançado e fortalecido
+                            artigos do antigo blog <i>Meu Devocional com Cristo</i> — este ministério tem alcançado e fortalecido
                             milhares de adoradores no Brasil e em diversas partes do mundo.
                         </p>
                         <p>
@@ -328,7 +328,7 @@
                         <p>
                             Ao longo de sua formação espiritual e musical, foi profundamente influenciada por seminários com
                             líderes como Pr. Antônio Cirilo, David Quinlan e Casa de Davi. Sua primeira composição autoral,
-                            Sacrifício de Amor, marcou o início de sua carreira solo e foi lançada oficialmente em 2023 no
+                            <i>Sacrifício de Amor</i>, marcou o início de sua carreira solo e foi lançada oficialmente em 2023 no
                             YouTube e nas plataformas de áudio.
                         </p>
                         <p>
@@ -338,12 +338,12 @@
                             ao longo de sua caminhada ministerial.
                         </p>
                         <p>
-                            Desde 2016, ela tem alcançado adoradores por meio do blog Meu Devocional com Cristo, e agora se
+                            Desde 2016, ela tem alcançado adoradores por meio do blog <i>Meu Devocional com Cristo</i>, e agora se
                             prepara para lançar seu primeiro livro, voltado especialmente para ministros de música que
                             desejam servir com excelência, profundidade e adoração genuína.
                         </p>
 
-                        <div class="featured-articles mt-2">
+                        <div class="featured-articles mt-5">
                             <h4>Eventos / Agendas</h4>
                             <div class="row g-4">
 
@@ -354,10 +354,9 @@
                                                 class="img-fluid">
                                         </div>
                                         <div class="article-details">
-                                            <div class="post-category">Technology</div>
-                                            <h5><a href="#">The Future of AI in Everyday Computing</a></h5>
+                                            <div class="post-category">Recital de alunos - <a href="https://www.instagram.com/isa.voice/" target="_blank" rel="noopener noreferrer"> ISA VOICE</a></div>
                                             <div class="post-meta">
-                                                <span><i class="bi bi-clock"></i> Jan 15, 2024</span>
+                                                <span><i class="bi bi-clock"></i> Novembro, 2024</span>
                                             </div>
                                         </div>
                                     </article>
@@ -370,16 +369,15 @@
                                                 class="img-fluid">
                                         </div>
                                         <div class="article-details">
-                                            <div class="post-category">Privacy</div>
-                                            <h5><a href="#">Understanding Digital Privacy in 2024</a></h5>
+                                            <div class="post-category">Lançamento do single</div>
                                             <div class="post-meta">
-                                                <span><i class="bi bi-clock"></i> Feb 3, 2024</span>
+                                                <span><i class="bi bi-clock"></i> Maio, 2023</span>
                                             </div>
                                         </div>
                                     </article>
                                 </div>
 
-                                <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+                                {{-- <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
                                     <article class="article-card">
                                         <div class="article-img">
                                             <img src="{{ asset('resources/img/blog/blog-post-2.webp') }}" alt="Article"
@@ -393,7 +391,7 @@
                                             </div>
                                         </div>
                                     </article>
-                                </div>
+                                </div> --}}
 
                             </div>
                         </div>
@@ -426,8 +424,8 @@
                             <div class="text-left">
 
                                 <p><i class="bi bi-check-all dourado"></i> <span class="destaque-texto">Ore pelos
-                                        missionários nativos Tomasz e
-                                        Malgorzata</span></br>
+                                        <a href="https://www.instagram.com/avivamentopolonia/" target="_blank" rel="noopener noreferrer"> missionários nativos Tomasz e
+                                        Malgorzata</a></span></br>
                                     Interceda pela vida, fortalecimento e provisão deles, bem como pelo avanço da obra
                                     missionária em solo polonês.
                                 </p>

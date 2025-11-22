@@ -52,12 +52,12 @@
             </nav>
 
             <div class="header-social-links">
-                <a href="https://www.facebook.com/profile.php?id=61577621965663" class="facebook"><i
+                <a href="https://www.facebook.com/profile.php?id=61577621965663" target="_blank" class="facebook"><i
                         class="bi bi-facebook"></i></a>
-                <a href="https://www.instagram.com/adoradoraartista/#" class="instagram" target="_blank"><i
+                <a href="https://www.instagram.com/adoradoraartista/#" target="_blank" class="instagram"><i
                         class="bi bi-instagram"></i></a>
 
-                <a href="https://www.youtube.com/watch?v=XPe3cVBGDnk" aria-label="YouTube"><i
+                <a href="https://www.youtube.com/watch?v=XPe3cVBGDnk" target="_blank" aria-label="YouTube"><i
                         class="bi bi-youtube"></i></a>
             </div>
 
@@ -91,11 +91,11 @@
                         <div class="footer-widget">
                             <h5>Conecte conosco</h5>
                             <div class="social-icons">
-                                <a href="https://www.facebook.com/profile.php?id=61577621965663" class="facebook"><i
+                                <a href="https://www.facebook.com/profile.php?id=61577621965663" target="_blank" class="facebook"><i
                                         class="bi bi-facebook"></i></a>
-                                <a href="https://www.instagram.com/adoradoraartista/#" aria-label="Instagram"><i
+                                <a href="https://www.instagram.com/adoradoraartista/#" target="_blank" aria-label="Instagram"><i
                                         class="bi bi-instagram"></i></a>
-                                <a href="https://www.youtube.com/watch?v=XPe3cVBGDnk" aria-label="YouTube"><i
+                                <a href="https://www.youtube.com/watch?v=XPe3cVBGDnk" target="_blank" aria-label="YouTube"><i
                                         class="bi bi-youtube"></i></a>
                             </div>
                         </div>
