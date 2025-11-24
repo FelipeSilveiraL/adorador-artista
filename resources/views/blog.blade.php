@@ -7,9 +7,8 @@
             <div class="container">
                 <div class="row d-flex justify-content-center text-center">
                     <div class="col-lg-8">
-                        <h1 class="heading-title">Blog Category</h1>
-                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                            ullamcorper mattis, pulvinar dapibus leo.</p>
+                        <h1 class="heading-title">Blog</h1>
+                        <p class="mb-0">Inspirando músicos cristãos com sabedoria e arte</p>
                     </div>
                 </div>
             </div>
@@ -17,8 +16,8 @@
         <nav class="breadcrumbs">
             <div class="container">
                 <ol>
-                    <li><a href="index.html">Home</a></li>
-                    <li class="current">Category</li>
+                    <li><a href="{{ url('/') }}">Home</a></li>
+                    <li class="current">Blog</li>
                 </ol>
             </div>
         </nav>
@@ -170,7 +169,7 @@
                     <!-- Search Widget -->
                     <div class="search-widget widget-item">
 
-                        <h3 class="widget-title">Search</h3>
+                        <h3 class="widget-title">Pesquisar</h3>
                         <form action="">
                             <input type="text">
                             <button type="submit" title="Search"><i class="bi bi-search"></i></button>
@@ -178,25 +177,10 @@
 
                     </div><!--/Search Widget -->
 
-                    <!-- Categories Widget -->
-                    <div class="categories-widget widget-item">
-
-                        <h3 class="widget-title">Categories</h3>
-                        <ul class="mt-3">
-                            <li><a href="#">General <span>(25)</span></a></li>
-                            <li><a href="#">Lifestyle <span>(12)</span></a></li>
-                            <li><a href="#">Travel <span>(5)</span></a></li>
-                            <li><a href="#">Design <span>(22)</span></a></li>
-                            <li><a href="#">Creative <span>(8)</span></a></li>
-                            <li><a href="#">Educaion <span>(14)</span></a></li>
-                        </ul>
-
-                    </div><!--/Categories Widget -->
-
                     <!-- Recent Posts Widget -->
                     <div class="recent-posts-widget widget-item">
 
-                        <h3 class="widget-title">Recent Posts</h3>
+                        <h3 class="widget-title">Postagens mais visitadas</h3>
 
                         <div class="post-item">
                             <img src="{{ asset('resources/img/blog/blog-post-square-1.webp') }}" alt="" class="flex-shrink-0">
@@ -239,26 +223,6 @@
                         </div><!-- End recent post item-->
 
                     </div><!--/Recent Posts Widget -->
-
-                    <!-- Tags Widget -->
-                    <div class="tags-widget widget-item">
-
-                        <h3 class="widget-title">Tags</h3>
-                        <ul>
-                            <li><a href="#">App</a></li>
-                            <li><a href="#">IT</a></li>
-                            <li><a href="#">Business</a></li>
-                            <li><a href="#">Mac</a></li>
-                            <li><a href="#">Design</a></li>
-                            <li><a href="#">Office</a></li>
-                            <li><a href="#">Creative</a></li>
-                            <li><a href="#">Studio</a></li>
-                            <li><a href="#">Smart</a></li>
-                            <li><a href="#">Tips</a></li>
-                            <li><a href="#">Marketing</a></li>
-                        </ul>
-
-                    </div><!--/Tags Widget -->
 
                 </div>
 

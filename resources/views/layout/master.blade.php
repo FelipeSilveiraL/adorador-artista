@@ -43,9 +43,12 @@
 
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="{{ url('/') }}" class="{{ $paginaAtual == 'index' ? 'active' : '' }}">Sobre </a> </li>
-                    <li><a href="{{ url('blog') }}" class="{{ $paginaAtual == 'blog' || $paginaAtual == 'blog-details' ? 'active' : '' }}">Blog</a> </li>
-                    <li><a href="author-profile.html">Loja</a></li>
+                    <li><a href="{{ url('/') }}" class="{{ $paginaAtual == 'index' ? 'active' : '' }}">Sobre </a>
+                    </li>
+                    <li><a href="{{ url('blog') }}"
+                            class="{{ $paginaAtual == 'blog' || $paginaAtual == 'blog-details' ? 'active' : '' }}">Blog</a>
+                    </li>
+                    {{-- <li><a href="author-profile.html">Loja</a></li> --}}
                     <li><a href="#footer">Contato</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -59,6 +62,23 @@
 
                 <a href="https://www.youtube.com/watch?v=XPe3cVBGDnk" target="_blank" aria-label="YouTube"><i
                         class="bi bi-youtube"></i></a>
+                @if ($paginaAtual == 'blog' || $paginaAtual == 'blog-details')
+
+                    @if (!Auth::check())
+                        {{-- Usuário NÃO está logado --}}
+                        <a href="javascript:" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="bi bi-person" title="Administrador"></i>
+                        </a>
+                    @else
+                        {{-- Usuário logado --}}
+                        <span style="font-size: 12px;">
+                            Olá, {{ Auth::user()->name ?? Auth::user()->username }}
+                            <a href="{{ url('logout') }}"> [Sair]</a>
+                        </span>
+                    @endif
+
+                @endif
+
             </div>
 
         </div>
@@ -69,6 +89,73 @@
         @yield('content')
 
     </main>
+
+    <!-- Modal login-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Login / Criar Conta</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="{{ url('login') }}" method="post">
+                    @csrf
+                    <div class="modal-body">
+
+                        <p style="font-size: 12px">Caso queira trocar o formulário para criação, basta clicar no
+                            checkbox abaixo, caso contrario
+                            irá apenas logar no sistema!</p>
+                        <div class="row">
+                            <div class="col">
+                                <input type="email" class="form-control" placeholder="E-mail" name="user"
+                                    aria-label="email" required>
+                            </div>
+                            <div class="col">
+                                <input type="password" class="form-control" placeholder="Senha" name="password"
+                                    aria-label="Senha" required>
+                            </div>
+                        </div>
+                        </br>
+                        <div class="row">
+                            <div class="col">
+                                <input class="form-check-input" id="CriarConta" type="checkbox" name="criarConta">
+                                <label for="form-check-input">Criar Conta</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+
+                        <!-- adicionando um id ao botão -->
+                        <button type="submit" class="btn btn-primary" id="btnLogin">Logar</button>
+                    </div>
+                </form>
+
+                <script>
+                    document.getElementById('CriarConta').addEventListener('change', function() {
+                        const botao = document.getElementById('btnLogin');
+
+                        if (this.checked) {
+                            botao.textContent = 'Salvar';
+
+                            // Trocar cor: primary -> success
+                            botao.classList.remove('btn-primary');
+                            botao.classList.add('btn-success');
+
+                        } else {
+                            botao.textContent = 'Logar';
+
+                            // Voltar cor: success -> primary
+                            botao.classList.remove('btn-success');
+                            botao.classList.add('btn-primary');
+                        }
+                    });
+                </script>
+
+            </div>
+        </div>
+    </div>
 
     <footer id="footer" class="footer light-background">
 
@@ -91,12 +178,12 @@
                         <div class="footer-widget">
                             <h5>Conecte conosco</h5>
                             <div class="social-icons">
-                                <a href="https://www.facebook.com/profile.php?id=61577621965663" target="_blank" class="facebook"><i
-                                        class="bi bi-facebook"></i></a>
-                                <a href="https://www.instagram.com/adoradoraartista/#" target="_blank" aria-label="Instagram"><i
-                                        class="bi bi-instagram"></i></a>
-                                <a href="https://www.youtube.com/watch?v=XPe3cVBGDnk" target="_blank" aria-label="YouTube"><i
-                                        class="bi bi-youtube"></i></a>
+                                <a href="https://www.facebook.com/profile.php?id=61577621965663" target="_blank"
+                                    class="facebook"><i class="bi bi-facebook"></i></a>
+                                <a href="https://www.instagram.com/adoradoraartista/#" target="_blank"
+                                    aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="https://www.youtube.com/watch?v=XPe3cVBGDnk" target="_blank"
+                                    aria-label="YouTube"><i class="bi bi-youtube"></i></a>
                             </div>
                         </div>
                     </div>
