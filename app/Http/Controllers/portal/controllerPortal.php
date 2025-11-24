@@ -27,7 +27,13 @@ class controllerPortal extends Controller
 
         return view($paginaAtual, compact('paginaAtual'));
     }
+    public function blogAdm()
+    {
+        //pegando a active atual
+        $paginaAtual = 'blogAdm';
 
+        return view('blog', compact('paginaAtual'));
+    }
     public function blogDetails()
     {
         //pegando a active atual

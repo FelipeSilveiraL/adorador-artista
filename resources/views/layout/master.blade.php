@@ -62,7 +62,7 @@
 
                 <a href="https://www.youtube.com/watch?v=XPe3cVBGDnk" target="_blank" aria-label="YouTube"><i
                         class="bi bi-youtube"></i></a>
-                @if ($paginaAtual == 'blog' || $paginaAtual == 'blog-details')
+                @if ($paginaAtual == 'blogAdm')
 
                     @if (!Auth::check())
                         {{-- Usuário NÃO está logado --}}
