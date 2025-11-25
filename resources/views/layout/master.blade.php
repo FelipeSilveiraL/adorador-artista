@@ -62,7 +62,7 @@
 
                 <a href="https://www.youtube.com/watch?v=XPe3cVBGDnk" target="_blank" aria-label="YouTube"><i
                         class="bi bi-youtube"></i></a>
-                @if ($paginaAtual == 'blogAdm')
+                @if ($paginaAtual == 'blogAdm' || $paginaAtual == 'admin'|| $paginaAtual == 'blogDetailsAdmin')
 
                     @if (!Auth::check())
                         {{-- Usuário NÃO está logado --}}
@@ -248,7 +248,7 @@
 
     <!-- Main JS File -->
     <script src="{{ asset('resources/js/main.js') }}"></script>
-    {{-- <script src="{{ asset('resources/js/seg.js') }}"></script> --}}
+    <script src="{{ asset('resources/js/seg.js') }}"></script>
 
 </body>
 

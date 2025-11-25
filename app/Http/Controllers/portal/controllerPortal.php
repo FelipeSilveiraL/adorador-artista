@@ -27,6 +27,17 @@ class controllerPortal extends Controller
 
         return view($paginaAtual, compact('paginaAtual'));
     }
+
+
+    public function blogDetails()
+    {
+        //pegando a active atual
+        $paginaAtual = 'blog-details';
+
+        return view($paginaAtual, compact('paginaAtual'));
+    }
+
+    //ADMIN
     public function blogAdm()
     {
         //pegando a active atual
@@ -34,12 +45,21 @@ class controllerPortal extends Controller
 
         return view('blog', compact('paginaAtual'));
     }
-    public function blogDetails()
+
+    public function blogDetailsAdmin()
     {
         //pegando a active atual
-        $paginaAtual = 'blog-details';
+        $paginaAtual = 'blogDetailsAdmin';
 
-        return view($paginaAtual, compact('paginaAtual'));
+        return view('blog-details', compact('paginaAtual'));
+    }
+
+    public function admin()
+    {
+        //pegando a active atual
+        $paginaAtual = 'admin';
+
+        return view('index', compact('paginaAtual'));
     }
 
     // LOGIN
