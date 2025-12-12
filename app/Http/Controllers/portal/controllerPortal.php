@@ -24,8 +24,9 @@ class controllerPortal extends Controller
     {
         //pegando a active atual
         $paginaAtual = 'blog';
+        $dadosPesquisa = null;
 
-        return view($paginaAtual, compact('paginaAtual'));
+        return view($paginaAtual, compact('paginaAtual', 'dadosPesquisa'));
     }
 
 
@@ -33,8 +34,20 @@ class controllerPortal extends Controller
     {
         //pegando a active atual
         $paginaAtual = 'blog-details';
+        $dadosPesquisa = null;
 
-        return view($paginaAtual, compact('paginaAtual'));
+        return view($paginaAtual, compact('paginaAtual', 'dadosPesquisa'));
+    }
+
+    public function pesquisar(Request $pesquisar)
+    {
+        //pegando a active atual
+        $paginaAtual = 'blog';
+
+        //pesquisar
+        $dadosPesquisa = $pesquisar->pesquisar;
+
+        return view($paginaAtual, compact('paginaAtual', 'dadosPesquisa'));
     }
 
     //ADMIN
@@ -42,16 +55,18 @@ class controllerPortal extends Controller
     {
         //pegando a active atual
         $paginaAtual = 'blogAdm';
+        $dadosPesquisa = null;
 
-        return view('blog', compact('paginaAtual'));
+        return view('blog', compact('paginaAtual', 'dadosPesquisa'));
     }
 
     public function blogDetailsAdmin()
     {
         //pegando a active atual
         $paginaAtual = 'blogDetailsAdmin';
+        $dadosPesquisa = null;
 
-        return view('blog-details', compact('paginaAtual'));
+        return view('blog-details', compact('paginaAtual', 'dadosPesquisa'));
     }
 
     public function admin()

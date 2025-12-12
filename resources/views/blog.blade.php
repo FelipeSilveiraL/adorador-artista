@@ -18,6 +18,9 @@
                 <ol>
                     <li><a href="{{ url('/') }}">Home</a></li>
                     <li class="current">Blog</li>
+                    @if (administrador($paginaAtual, true) == true)
+                        <li class="current"><a href="javascript:">Nova Postagem +</a></li>
+                    @endif
                 </ol>
             </div>
         </nav>
@@ -26,6 +29,7 @@
     <div class="container">
         <div class="row">
 
+            {{-- LISTA DE POSTAGENS --}}
             <div class="col-lg-8">
 
                 <!-- Category Postst Section -->
@@ -35,104 +39,38 @@
 
                         <div class="row gy-5">
 
-                            <div class="col-lg-6">
-                                <article>
+                            {{-- POSTAGENS --}}
 
-                                    <div class="post-img">
-                                        <img src="{{ asset('resources/img/blog/blog-post-1.webp') }}" alt="" class="img-fluid">
-                                    </div>
+                            @if ($dadosPesquisa)
+                                <p>Você realizou uma pesquisa por <b>"{{ $dadosPesquisa }}"</b>, porém não encontramos nada!</p>
+                                <p>Tente novamente ou <a href="{{ url('blog') }}">volte</a> para o blog</p>
+                            @else
+                                <div class="col-lg-6">
+                                    <article>
 
-                                    <div class="meta-top">
-                                        <ul>
-                                            <li class="d-flex align-items-center"><a href="blog-details.html">Sorts</a></li>
-                                            <li class="d-flex align-items-center"><i class="bi bi-dot"></i> <a
-                                                    href="blog-details.html"><time datetime="2022-01-01">Jan 1,
-                                                        2022</time></a></li>
-                                        </ul>
-                                    </div>
+                                        <div class="post-img">
+                                            <img src="{{ asset('resources/img/blog/blog-post-1.webp') }}" alt=""
+                                                class="img-fluid">
+                                        </div>
 
-                                    <h2 class="title">
-                                        <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
-                                    </h2>
+                                        <div class="meta-top">
+                                            <ul>
+                                                <li class="d-flex align-items-center">12 Dezembro 2025</li>
+                                            </ul>
+                                        </div>
 
-                                </article>
-                            </div><!-- End post list item -->
+                                        <h2 class="title">
+                                            <a href="javascript:">Titulo da Postagem</a>
+                                        </h2>
+                                        <p class="body">
+                                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum tempore autem
+                                            dolor quae, atque voluptas aspernatur omnis adipisci... <a href="javascript:"
+                                                title="Continue lendo!"> <i class="bi bi-arrow-right-circle-fill"> </a></i>
+                                        </p>
 
-                            <div class="col-lg-6">
-
-                                <article>
-
-                                    <div class="post-img">
-                                        <img src="{{ asset('resources/img/blog/blog-post-2.webp') }}" alt="" class="img-fluid">
-                                    </div>
-
-                                    <div class="meta-top">
-                                        <ul>
-                                            <li class="d-flex align-items-center"><a href="blog-details.html">Fashion</a>
-                                            </li>
-                                            <li class="d-flex align-items-center"><i class="bi bi-dot"></i> <a
-                                                    href="blog-details.html"><time datetime="2022-01-01">Jan 1,
-                                                        2022</time></a></li>
-                                        </ul>
-                                    </div>
-
-                                    <h2 class="title">
-                                        <a href="blog-details.html">Nisi magni odit consequatur autem nulla dolorem</a>
-                                    </h2>
-
-                                </article>
-
-                            </div><!-- End post list item -->
-
-                            <div class="col-lg-6">
-
-                                <article>
-
-                                    <div class="post-img">
-                                        <img src="{{ asset('resources/img/blog/blog-post-3.webp') }}" alt="" class="img-fluid">
-                                    </div>
-
-                                    <div class="meta-top">
-                                        <ul>
-                                            <li class="d-flex align-items-center"><a href="blog-details.html">Laws</a></li>
-                                            <li class="d-flex align-items-center"><i class="bi bi-dot"></i> <a
-                                                    href="blog-details.html"><time datetime="2022-01-01">Jul 5,
-                                                        2022</time></a></li>
-                                        </ul>
-                                    </div>
-
-                                    <h2 class="title">
-                                        <a href="blog-details.html">Possimus soluta ut id suscipit soluta</a>
-                                    </h2>
-
-                                </article>
-
-                            </div><!-- End post list item -->
-
-                            <div class="col-lg-6">
-
-                                <article>
-
-                                    <div class="post-img">
-                                        <img src="{{ asset('resources/img/blog/blog-post-4.webp') }}" alt="" class="img-fluid">
-                                    </div>
-
-                                    <div class="meta-top">
-                                        <ul>
-                                            <li class="d-flex align-items-center"><a href="blog-details.html">Sorts</a></li>
-                                            <li class="d-flex align-items-center"><i class="bi bi-dot"></i> <a
-                                                    href="blog-details.html"><time datetime="2022-01-01">Mar 17,
-                                                        2022</time></a></li>
-                                        </ul>
-                                    </div>
-
-                                    <h2 class="title">
-                                        <a href="blog-details.html">Non rem rerum nam cum quo minus exercitationem.</a>
-                                    </h2>
-
-                                </article>
-
-                            </div><!-- End post list item -->
+                                    </article>
+                                </div><!-- End post list item -->
+                            @endif
 
                         </div><!-- End blog posts list -->
 
@@ -140,8 +78,8 @@
 
                 </section><!-- /Category Postst Section -->
 
-                <!-- Pagination 2 Section -->
-                <section id="pagination-2" class="pagination-2 section">
+                {{-- PAGINAÇÃO --}}
+                {{-- <section id="pagination-2" class="pagination-2 section">
 
                     <div class="container">
                         <div class="d-flex justify-content-center">
@@ -158,10 +96,11 @@
                         </div>
                     </div>
 
-                </section><!-- /Pagination 2 Section -->
+                </section> --}}
 
             </div>
 
+            {{-- LISTA DE POSTAGENS LATERAL --}}
             <div class="col-lg-4 sidebar">
 
                 <div class="widgets-container">
@@ -170,9 +109,10 @@
                     <div class="search-widget widget-item">
 
                         <h3 class="widget-title">Pesquisar</h3>
-                        <form action="">
-                            <input type="text">
-                            <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+                        <form action="{{ url('pesquisar') }}" method="POST">
+                            @csrf
+                            <input type="text" name="pesquisar" id="pesquisar" maxlength="40">
+                            <button type="submit" title="Pesquisar"><i class="bi bi-search"></i></button>
                         </form>
 
                     </div><!--/Search Widget -->
@@ -185,42 +125,10 @@
                         <div class="post-item">
                             <img src="{{ asset('resources/img/blog/blog-post-square-1.webp') }}" alt="" class="flex-shrink-0">
                             <div>
-                                <h4><a href="blog-details.html">Nihil blanditiis at in nihil autem</a></h4>
-                                <time datetime="2020-01-01">Jan 1, 2020</time>
+                                <h4><a href="blog-details.html">Titulo da postagem</a></h4>
+                                <time datetime="2025-01-12"><i class="bi bi-clock"></i> 12 Dezembro 2025</time>
                             </div>
-                        </div><!-- End recent post item-->
-
-                        <div class="post-item">
-                            <img src="{{ asset('resources/img/blog/blog-post-square-2.webp') }}" alt="" class="flex-shrink-0">
-                            <div>
-                                <h4><a href="blog-details.html">Quidem autem et impedit</a></h4>
-                                <time datetime="2020-01-01">Jan 1, 2020</time>
-                            </div>
-                        </div><!-- End recent post item-->
-
-                        <div class="post-item">
-                            <img src="{{ asset('resources/img/blog/blog-post-square-3.webp') }}" alt="" class="flex-shrink-0">
-                            <div>
-                                <h4><a href="blog-details.html">Id quia et et ut maxime similique occaecati ut</a></h4>
-                                <time datetime="2020-01-01">Jan 1, 2020</time>
-                            </div>
-                        </div><!-- End recent post item-->
-
-                        <div class="post-item">
-                            <img src="{{ asset('resources/img/blog/blog-post-square-4.webp') }}" alt="" class="flex-shrink-0">
-                            <div>
-                                <h4><a href="blog-details.html">Laborum corporis quo dara net para</a></h4>
-                                <time datetime="2020-01-01">Jan 1, 2020</time>
-                            </div>
-                        </div><!-- End recent post item-->
-
-                        <div class="post-item">
-                            <img src="{{ asset('resources/img/blog/blog-post-square-5.webp') }}" alt="" class="flex-shrink-0">
-                            <div>
-                                <h4><a href="blog-details.html">Et dolores corrupti quae illo quod dolor</a></h4>
-                                <time datetime="2020-01-01">Jan 1, 2020</time>
-                            </div>
-                        </div><!-- End recent post item-->
+                        </div>
 
                     </div><!--/Recent Posts Widget -->
 

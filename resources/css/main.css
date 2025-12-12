@@ -1283,6 +1283,11 @@ section,
   object-fit: cover;
 }
 
+.post-img{
+    border-radius: 10px;
+    max-width: 90% !important;
+}
+
 .category-section .hero-post .post-content {
   padding: 30px;
 }

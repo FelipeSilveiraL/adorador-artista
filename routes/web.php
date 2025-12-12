@@ -16,6 +16,8 @@ Route::get('blog/admin', [controllerPortal::class, 'blogAdm']);
 Route::get('blog-details/{id}/admin', [controllerPortal::class, 'blogDetailsAdmin']);
 Route::get('/admin', [controllerPortal::class, 'admin']);
 
+#PESQUISAR
+Route::post('pesquisar', [controllerPortal::class, 'pesquisar']);
 
 #LOGIN
 
