@@ -19,7 +19,8 @@
                     <li><a href="{{ url('/') }}">Home</a></li>
                     <li class="current">Blog</li>
                     @if (administrador($paginaAtual, true) == true)
-                        <li class="current"><a href="javascript:">Nova Postagem +</a></li>
+                        <li class="current"><a href="javascript:" data-bs-toggle="modal"
+                                data-bs-target="#formularioPostagem">Nova Postagem +</a></li>
                     @endif
                 </ol>
             </div>
@@ -42,7 +43,8 @@
                             {{-- POSTAGENS --}}
 
                             @if ($dadosPesquisa)
-                                <p>Você realizou uma pesquisa por <b>"{{ $dadosPesquisa }}"</b>, porém não encontramos nada!</p>
+                                <p>Você realizou uma pesquisa por <b>"{{ $dadosPesquisa }}"</b>, porém não encontramos nada!
+                                </p>
                                 <p>Tente novamente ou <a href="{{ url('blog') }}">volte</a> para o blog</p>
                             @else
                                 <div class="col-lg-6">
@@ -123,7 +125,8 @@
                         <h3 class="widget-title">Postagens mais visitadas</h3>
 
                         <div class="post-item">
-                            <img src="{{ asset('resources/img/blog/blog-post-square-1.webp') }}" alt="" class="flex-shrink-0">
+                            <img src="{{ asset('resources/img/blog/blog-post-square-1.webp') }}" alt=""
+                                class="flex-shrink-0">
                             <div>
                                 <h4><a href="blog-details.html">Titulo da postagem</a></h4>
                                 <time datetime="2025-01-12"><i class="bi bi-clock"></i> 12 Dezembro 2025</time>
@@ -136,6 +139,54 @@
 
             </div>
 
+        </div>
+    </div>
+
+    {{-- MODAL FORMULARIO POSTAGEM --}}
+    <div class="modal fade" id="formularioPostagem" tabindex="-1" aria-labelledby="FormularioModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="FormularioModalLabel">Formulario Postagem</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="{{ url('formPostagem') }}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <div class="modal-body">
+
+                        <p style="font-size: 12px">Para realizar a postagem, basta preencher todo o formulario abaixo</p>
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Titulo" name="titulo"
+                                    ria-label="titulo" required>
+                            </div>
+                        </div>
+                        </br>
+                        <div class="row">
+                            <div class="col">
+                                <textarea name="editor1"></textarea>
+                                <script>
+                                    CKEDITOR.replace('editor1');
+                                </script>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-check-input" id="CriarConta" type="checkbox" name="criarConta">
+                                    <label for="form-check-input">Criar Conta</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+
+                            <!-- adicionando um id ao botão -->
+                            <button type="submit" class="btn btn-primary" id="btnLogin">Logar</button>
+                        </div>
+                </form>
+
+            </div>
         </div>
     </div>
 @endsection

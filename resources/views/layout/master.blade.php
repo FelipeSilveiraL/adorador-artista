@@ -28,6 +28,9 @@
     <!-- Main CSS File -->
     <link href="{{ asset('resources/css/main.css') }}" rel="stylesheet">
 
+    <script src="{{  asset('resources/ckeditor/ckeditor.js') }}"></script>
+
+
 </head>
 
 <body class="index-page">
